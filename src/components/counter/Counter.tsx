@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { actionTypes, selectors } from '../../features/counter'
+import React, { Fragment } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { counterSlice, selectors } from '../../features/counter';
 
 const Counter: React.FC = () => {
-  const count = useSelector(selectors.getCountValue)
-  const dispatch = useDispatch()
+  const count = useSelector(selectors.getCountValue);
+  const dispatch = useDispatch();
 
   return (
     <Fragment>
@@ -27,9 +27,7 @@ const Counter: React.FC = () => {
                   className="waves-effect waves-teal btn-flat blue"
                   type="button"
                   data-qa="decrement-counter"
-                  onClick={() =>
-                    dispatch({ type: actionTypes.DECREMENT_COUNTER })
-                  }
+                  onClick={() => dispatch(counterSlice.actions.decrement())}
                 >
                   decrement
                 </button>
@@ -37,9 +35,7 @@ const Counter: React.FC = () => {
                   className="waves-effect waves-teal btn-flat red"
                   type="button"
                   data-qa="increment-counter"
-                  onClick={() =>
-                    dispatch({ type: actionTypes.INCREMENT_COUNTER })
-                  }
+                  onClick={() => dispatch(counterSlice.actions.increment())}
                 >
                   increment
                 </button>
@@ -49,7 +45,7 @@ const Counter: React.FC = () => {
         </div>
       </div>
     </Fragment>
-  )
-}
+  );
+};
 
-export default Counter
+export default Counter;

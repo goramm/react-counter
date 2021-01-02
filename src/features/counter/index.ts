@@ -1,6 +1,5 @@
-import * as actionTypes from './actionTypes'
-import * as selectors from './selectors'
+import * as selectors from './selectors';
+import * as counterSlice from './slice';
 
-export { default as CounterReducer } from './counterReducer'
-export { actionTypes }
-export { selectors }
+export { counterSlice };
+export { selectors };

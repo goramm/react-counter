@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react'
-import Counter from '../components/counter/Counter'
+import React, { Fragment } from 'react';
+import Counter from '../components/counter/Counter';
 
 export const Home: React.FC = () => {
   return (
@@ -12,5 +12,5 @@ export const Home: React.FC = () => {
       </p>
       <Counter />
     </Fragment>
-  )
-}
+  );
+};
