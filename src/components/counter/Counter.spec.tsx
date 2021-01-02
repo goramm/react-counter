@@ -19,7 +19,7 @@ describe('Counter', () => {
 
   beforeEach(() => {
     // Clear any saved mock data from previous tests, because jest saves calls data for spies and mocks, https://jestjs.io/docs/en/mock-function-api#mockfnmockclear
-    store.dispatch.mockClear();
+    jest.clearAllMocks();
   });
 
   it('renders without crashing.', () => {
@@ -62,10 +62,8 @@ describe('Counter', () => {
       .filter({ 'data-qa': 'decrement-counter' })
       .simulate('click');
 
-    expect(store.dispatch).toHaveBeenCalledTimes(1);
+    expect(store.dispatch).toBeCalledTimes(1);
 
-    expect(store.dispatch).toHaveBeenCalledWith(
-      counterSlice.actions.decrement()
-    );
+    expect(store.dispatch).toBeCalledWith(counterSlice.actions.decrement());
   });
 });
